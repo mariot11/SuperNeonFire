@@ -12,6 +12,8 @@ public class MissileController : MonoBehaviour
     public float missileDamage = 50f;
     public float cameraShakeTime;
     public float cameraShakeMag;
+    [Range(0.5f, 2f)]
+    public float rotationSpeed = 1.85f;
 
     private GameObject parentTurret;
     private CameraShake cameraShake;
@@ -36,11 +38,14 @@ public class MissileController : MonoBehaviour
         timer += Time.deltaTime;
         transform.position += transform.forward * (speed * Time.deltaTime);
 
-        if (timer >= checkPositionTime)
-        {
-            StartCoroutine(TurnToPlayer());
-            timer = 0;
-        }
+        //if (timer >= checkPositionTime)
+        //{
+        //    StartCoroutine(TurnToPlayer());
+        //    timer = 0;
+        //}
+
+        //Turning
+        TurnToPLayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -91,16 +96,22 @@ public class MissileController : MonoBehaviour
         parentTurret = turret;
     }
 
-    IEnumerator TurnToPlayer() {
-        float turningTimer = 0;
+    //IEnumerator TurnToPlayer() {
+    //float turningTimer = 0;
+    //Quaternion missileRotation = transform.rotation;
+    //Quaternion missileToPlayerRotation = Quaternion.LookRotation(player.position - transform.position, transform.up);
+    //while (turningTimer < totalTurningTime)
+    //{
+    //    transform.rotation = Quaternion.Lerp(missileRotation, missileToPlayerRotation, turningTimer/totalTurningTime);
+    //    turningTimer += Time.deltaTime;
+    //    yield return null;
+    //}
+
+    //}
+
+    public void TurnToPLayer() {
         Quaternion missileRotation = transform.rotation;
         Quaternion missileToPlayerRotation = Quaternion.LookRotation(player.position - transform.position, transform.up);
-        while (turningTimer < totalTurningTime)
-        {
-            transform.rotation = Quaternion.Lerp(missileRotation, missileToPlayerRotation, turningTimer/totalTurningTime);
-            turningTimer += Time.deltaTime;
-            yield return null;
-        }
-            
+        transform.rotation = Quaternion.Lerp(missileRotation, missileToPlayerRotation, rotationSpeed * Time.deltaTime);
     }
 }

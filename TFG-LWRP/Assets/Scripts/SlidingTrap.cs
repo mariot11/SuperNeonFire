@@ -7,6 +7,7 @@ public class SlidingTrap : TrapScript
     public float waitingTime = 0f;
     [Range(0f, 2f)]
     public float animatorVelocity = 1f;
+    public AudioSource trapSound;
 
     private Animator anim;
     private int WaitState = Animator.StringToHash("Wait");
@@ -29,5 +30,9 @@ public class SlidingTrap : TrapScript
     private IEnumerator WaitXSeconds() {
         yield return new WaitForSeconds(waitingTime);
         anim.SetTrigger("timeToSlide");
+    }
+
+    public void makeSound() {
+        trapSound.Play();
     }
 }

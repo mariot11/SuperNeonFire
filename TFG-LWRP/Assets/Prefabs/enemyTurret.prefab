@@ -425,6 +425,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1611449644177056320, guid: e64af8fc2074bc74cbc67f6ee951a602,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611449644177056320, guid: e64af8fc2074bc74cbc67f6ee951a602,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.18908167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160877882702489747, guid: e64af8fc2074bc74cbc67f6ee951a602,
+        type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 2068376702595757094}
+    - target: {fileID: 3160877882702489747, guid: e64af8fc2074bc74cbc67f6ee951a602,
+        type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3160877882702489747, guid: e64af8fc2074bc74cbc67f6ee951a602,
         type: 3}
       propertyPath: healthBar
@@ -440,6 +460,12 @@ PrefabInstance:
 --- !u!4 &3465381661032114800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7207279353643397136, guid: e64af8fc2074bc74cbc67f6ee951a602,
+    type: 3}
+  m_PrefabInstance: {fileID: 6058155275965373024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2068376702595757094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5235080003208277574, guid: e64af8fc2074bc74cbc67f6ee951a602,
     type: 3}
   m_PrefabInstance: {fileID: 6058155275965373024}
   m_PrefabAsset: {fileID: 0}
